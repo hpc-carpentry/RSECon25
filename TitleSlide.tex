@@ -1,62 +1,39 @@
+{	% Background Image
+\usebackgroundtemplate{
+	\includegraphics[width=\paperwidth]{images/TitleSlideBackground_red.png}
+}
+\begin{frame}
 
-	% Background Image
-	\newcommand{\myBackround}
-	{
-	    \includegraphics[width=\paperwidth]{images/TitleSlideBackground.png}
-	}
 	
 	% Title
-	\newcommand{\myTitle}
-	{
-	    HPC Carpentry
-	}
+	\newcommand{\myTitle}{HPC Carpentry}
 	
 	% Subtitle
-	\newcommand{\mySubTitle}
-	{
-	   An Overview of HPC Carpentry's Activities
-	}
+	\newcommand{\mySubTitle}{An Overview of HPC Carpentry's Activities}
 	
 	% Author
-	\newcommand{\myAuthor}   
-	{
-	    Jannetta Steyn, Newcastle University, UK
-	}
+	\newcommand{\myAuthor}{Jannetta Steyn, Newcastle University, UK}
 	
 	% Affiliation
-	\newcommand{\myAffiliate}
-	{
-	 Toby Hodges, Andrew Reid, Annajiat Alim Rasel, Kichakato Kizito, Trevor Keller, Wirawan Purwanto
-	}
+	\newcommand{\myAffiliate}{
+	 Toby Hodges, Andrew Reid, Annajiat Alim Rasel, Kichakato Kizito, Trevor Keller, Wirawan Purwanto}
 	
 	% Presentation Date
-	\newcommand{\myDate}   
-	{
-	    September 09, 2025
-	}
+	\newcommand{\myDate}{September 09, 2025}
 	
 	% Logo
-	\newcommand{\myLogo}   
-	{
+	\newcommand{\myLogo}{
 	    % Logo here
 	}
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
 	
 	%%%%%%%%%% Title slide code %%%%%%%%%%%
 	\begin{tikzpicture}[remember picture,overlay]
 	
-		% Background image
-		\node[above right,inner sep=0pt] at (current page.south west)
-		    {
-		        \myBackround
-		    };
-		    
 		
 		% Title & Subtitle
 		\node
 		[
-		    above=-0.6cm,
+		    above=-0.7cm,
 		    align=center,
 		    draw=carpblue,
 		    left color=carpblue!50,
@@ -94,3 +71,5 @@
 	
 	\end{tikzpicture}
 
+\end{frame}
+}

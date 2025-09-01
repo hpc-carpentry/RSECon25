@@ -1,14 +1,42 @@
 \mode<presentation>
+% Define Carpentries colours
+\definecolor{carpblue}{HTML}{001483}
 
 % Requirements
 \RequirePackage{tikz}
 
+% Use Mulish font (requires XeLaTeX or LuaLaTeX)
+\usepackage{fontspec}
+\usepackage{caption}
+\setsansfont{Mulish}
+\setmainfont{Mulish}
+\setmonofont{Mulish}
+
+% Beamer defaults
+% Reduce space above frametitles, center them, make them bold Mulish
+\setbeamertemplate{frametitle}{%
+	\vspace{-0.1em}% move up (adjust as needed)
+	\centering\insertframetitle\par
+}
+
+% Set font sizes
+\setbeamerfont{normal text}{size=\large} % bigger body text
+\setbeamerfont{frametitle}{size=\large\sffamily\bfseries} % bigger, bold titles
+
+% Colour for text
+\setbeamercolor{normal text}{fg=carpblue}
+
+% Remove navigation symbols
 \setbeamertemplate{navigation symbols}{}
+
 % Tikz package
 \usepackage{tikz}
 \usetikzlibrary{positioning}
-% Defin Carpentries colours
-\definecolor{carpblue}{HTML}{001483}
 
+% Background image
+\usebackgroundtemplate{%
+	\includegraphics[width=\paperwidth,height=\paperheight]{images/DefaultSlide_red.png}
+}
 
+% Settings
 \mode<all>
