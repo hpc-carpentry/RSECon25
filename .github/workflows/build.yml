@@ -6,17 +6,17 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: Install Mulish font
-        run: |
-          mkdir -p ~/.local/share/fonts
-          curl -L -o /tmp/mulish.zip https://github.com/google/fonts/raw/main/ofl/mulish/Mulish%5Bwght%5D.ttf
-          cp /tmp/mulish.zip ~/.local/share/fonts/Mulish.ttf
-          fc-cache -fv
+        #      - name: Install Mulish font
+        #run: |
+        #  mkdir -p ~/.local/share/fonts
+        #  curl -L -o /tmp/mulish.zip https://github.com/google/fonts/raw/main/ofl/mulish/Mulish%5Bwght%5D.ttf
+        #  cp /tmp/mulish.zip ~/.local/share/fonts/Mulish.ttf
+        #  fc-cache -fv
       - name: Compile slide
         uses: xu-cheng/latex-action@v2
-        with:
-          extra_fonts: |
-            ~/.local/share/fonts/Mulish.ttf
+        #        with:
+        #  extra_fonts: |
+        #    ~/.local/share/fonts/Mulish.ttf
           root_file: slides.tex
           latexmk_use_lualatex: true
       - name: Upload slides PDF file
