@@ -16,7 +16,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           extra_fonts: |
-            ./path/to/custom.ttf
+            ~/.local/share/fonts/Mulis.ttf
           root_file: slides.tex
           latexmk_use_lualatex: true
       - name: Upload slides PDF file
