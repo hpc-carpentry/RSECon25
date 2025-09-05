@@ -1,6 +1,7 @@
 \mode<presentation>
 % Define Carpentries colours
 \definecolor{carpblue}{HTML}{001483}
+\definecolor{carpred}{HTML}{FF4955}
 
 % Requirements
 \RequirePackage{tikz}
@@ -73,6 +74,33 @@
 	% Logo here
 }
 
+
+\newenvironment{carpblockred}[1][]{
+	
+	%%%%%%%%%% Rounded corner block around text %%%%%%%%%%%
+	\begin{tikzpicture}[remember picture,overlay]
+		% Title & Subtitle
+		\node
+		[
+		above=-0.7cm,
+		align=center,
+		draw=carpred,
+		very thick,
+		rounded corners=4pt,
+		left color=carpred!50,
+		right color=carpred!5,
+		shading angle=60,
+		inner xsep=15pt,
+		inner ysep=10pt, 
+		minimum width=0.7\textwidth,
+		text width=0.8\textwidth
+		] 
+		
+		{
+			
+		};
+	\end{tikzpicture}
+}
 
 % Settings
 \mode<all>
