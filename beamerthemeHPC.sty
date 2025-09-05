@@ -15,6 +15,7 @@
 \setsansfont{Mulish}
 \setmainfont{Mulish}
 \setmonofont{Mulish}
+	\usefonttheme[onlysmall]{structurebold}
 
 % Beamer defaults
 % Reduce space above frametitles, center them, make them bold Mulish
@@ -30,17 +31,48 @@
 % Colour for text
 \setbeamercolor{normal text}{fg=carpblue}
 
-% Remove navigation symbols
-\setbeamertemplate{navigation symbols}{}
+% Navigation symbols
+%\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{navigation symbols}{
+	\usebeamerfont{footline}
+	\usebeamercolor[fg]{footline}
+	\hspace{1em}
+	\insertframenumber/\inserttotalframenumber
+
+}
 
 % Tikz package
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 
+
 % Background image
 \usebackgroundtemplate{%
 	\includegraphics[width=\paperwidth,height=\paperheight]{images/DefaultSlide_red.png}
 }
+
+%%%%%%%%%%%%%%%%%% Title Page %%%%%%%%%%%%%%%%%%%
+% Title
+\newcommand{\myTitle}{HPC Carpentry}
+
+% Subtitle
+\newcommand{\mySubTitle}{An Overview of HPC Carpentry's Activities}
+
+% Author
+\newcommand{\myAuthor}{Jannetta Steyn, Newcastle University, UK}
+
+% Affiliation
+\newcommand{\myAffiliate}{
+	Toby Hodges, Andrew Reid, Annajiat Alim Rasel, Benson Muite, Trevor Keller, Wirawan Purwanto}
+
+% Presentation Date
+\newcommand{\myDate}{September 09, 2025}
+
+% Logo
+\newcommand{\myLogo}{
+	% Logo here
+}
+
 
 % Settings
 \mode<all>
