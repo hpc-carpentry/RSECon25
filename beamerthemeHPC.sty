@@ -2,6 +2,7 @@
 % Define Carpentries colours
 \definecolor{carpblue}{HTML}{001483}
 \definecolor{carpred}{HTML}{FF4955}
+\definecolor{carplightgreen}{HTML}{40AEAD}
 
 % Requirements
 \RequirePackage{tikz}
@@ -75,32 +76,72 @@
 }
 
 
-\newenvironment{carpblockred}[1][]{
-	
-	%%%%%%%%%% Rounded corner block around text %%%%%%%%%%%
-	\begin{tikzpicture}[remember picture,overlay]
-		% Title & Subtitle
-		\node
-		[
-		above=-0.7cm,
-		align=center,
-		draw=carpred,
-		very thick,
-		rounded corners=4pt,
-		left color=carpred!50,
-		right color=carpred!5,
-		shading angle=60,
-		inner xsep=15pt,
-		inner ysep=10pt, 
-		minimum width=0.7\textwidth,
-		text width=0.8\textwidth
-		] 
-		
-		{
-			
-		};
-	\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Robust Carpentries red block
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{carpblockred}[1][]%
+{%
+	\par\vspace{1ex}%
+		\centering
+		\begin{tikzpicture}
+			\node[
+			align=left,
+			draw=carpred,
+			very thick,
+			rounded corners=4pt,
+			left color=carpred!50,
+			right color=carpred!5,
+			shading angle=60,
+			inner sep=6pt,
+			text width=0.9\linewidth
+			] (box) \bgroup
+			\begin{minipage}{0.85\linewidth}
+				\ifx\relax#1\relax
+				\else
+				{\bfseries #1}\\[0.5ex]%
+				\fi
+			}%
+			{%
+			\end{minipage}
+			\egroup;
+		\end{tikzpicture}%
+
+	\vspace{1ex}\par
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Robust Carpentries red block
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{carpblockgreen}[1][]%
+{%
+	\par\vspace{1ex}%
+		\centering
+	
+		\begin{tikzpicture}
+			\node[
+			align=left,
+			draw=carplightgreen,
+			very thick,
+			rounded corners=4pt,
+			left color=carplightgreen!50,
+			right color=carplightgreen!5,
+			shading angle=60,
+			inner sep=6pt,
+			text width=0.9\linewidth
+			] (box) \bgroup
+			\begin{minipage}{0.85\linewidth}
+				\ifx\relax#1\relax
+				\else
+				{\bfseries #1}\\[0.5ex]%
+				\fi
+			}%
+			{%
+			\end{minipage}
+			\egroup;
+		\end{tikzpicture}%
+	\vspace{1ex}\par
+}
+
 
 % Settings
 \mode<all>
